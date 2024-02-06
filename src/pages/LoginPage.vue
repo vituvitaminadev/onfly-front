@@ -12,7 +12,7 @@
           </div>
         </div>
       </q-card-section>
-      <q-card-section align="center">
+      <q-card-section align="center" @submit=handleSubmit>
         <q-form class="q-gutter-md">
           <q-input type="email" filled v-model="email" label="Email" lazy-rules required />
 
@@ -42,7 +42,6 @@ const router = useRouter();
 const $q = useQuasar();
 
 const handleSubmit = () => {
-  // Send api request to login, if suceeded redirect to home page and save token to localStorage
   login({ email: email.value, password: password.value }).then(() => {
     $q.notify({
       color: 'positive',
