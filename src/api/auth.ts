@@ -30,8 +30,8 @@ export async function logout() : Promise<void> {
     await api.post('logout');
 
     localStorage.removeItem('userToken');
-  } catch (error) {
-      console.error(error);
+  } catch (error: any) {
+      console.log(error.message);
       throw error;
   }
 }

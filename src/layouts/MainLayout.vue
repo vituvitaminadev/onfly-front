@@ -6,7 +6,7 @@
           Quasar App
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn @click="handleLogout" label="Logout" color="secondary" class="q-mr-md" />
       </q-toolbar>
     </q-header>
 
@@ -17,5 +17,30 @@
 </template>
 
 <script setup lang="ts">
+import { logout } from 'src/api/auth';
+import { useRouter } from 'vue-router';
+import { useQuasar, QSpinnerGears } from 'quasar';
+
+const router = useRouter();
+const $q = useQuasar();
+
+const handleLogout = () => {
+  logout().then(() => {
+    localStorage.removeItem('userToken');
+    $q.notify({
+      spinner: QSpinnerGears,
+      position: 'top',
+      message: 'Logging out',
+      icon: 'info',
+      timeout: 500
+    });
+    setTimeout(() => {
+      router.push({ name: 'login' });
+    }, 1500);
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
+};
 
 </script>
