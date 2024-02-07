@@ -2,30 +2,27 @@
 
   <div class="q-pa-mid">
     <q-table
-      title="Expenses"
       :rows="rows"
       row-key="name"
       flat
       bordered
+      :rows-per-page-options="[5, 10, 15, 20, 25, 50]"
       v-model:pagination="pagination"
-      hide-pagination
       no-data-label="You haven't created a expense yet"
     />
-
-    <div class="row justify-center q-mt-md">
-      <q-pagination
-        v-model="pagination.page"
-        color="grey-8"
-        :max="pagesNumber"
-        size="sm"
-      />
-    </div>
   </div>
 
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 import { ref, computed } from 'vue'
+
+const pagination = ref({
+  sortBy: 'desc',
+  descending: false,
+  page: 1,
+  rowsPerPage: 10
+})
 
 const columns = [
   {name: 'id', align: 'left', required: true, label: '#', field: 'id', sortable: true},
@@ -60,25 +57,5 @@ const rows = [
     value: 150.00
   },
 ];
-
-export default {
-  setup () {
-
-    const pagination = ref({
-      sortBy: 'desc',
-      descending: false,
-      page: 1,
-      rowsPerPage: 3
-    })
-
-    return {
-      pagination,
-      columns,
-      rows,
-
-      pagesNumber: computed(() => Math.ceil(rows.length / pagination.value.rowsPerPage))
-    }
-  }
-}
 
 </script>
