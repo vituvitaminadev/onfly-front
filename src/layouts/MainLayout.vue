@@ -3,7 +3,7 @@
     <q-header elevated>
       <q-toolbar>
         <q-toolbar-title>
-          Quasar App
+          Expense Manager
         </q-toolbar-title>
 
         <q-btn @click="handleLogout" label="Logout" color="secondary" class="q-mr-md" />
