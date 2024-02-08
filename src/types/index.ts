@@ -30,14 +30,18 @@ export interface MetaData {
 };
 
 export interface ExpensePaginatedResponse {
-  data: ExpenseResponse[];
+  data: ExpenseData[];
   meta: MetaData;
 };
 
-export interface ExpenseResponse {
+export interface ExpenseData {
   id: number;
   description: string;
   date: string;
   value: number;
   user_id: number;
 };
+
+export interface OpenDialogMethods {
+  openModalDialog: () => void;
+}
