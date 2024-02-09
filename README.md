@@ -22,4 +22,4 @@ quasar build
 
 ### API
 
-The API repository can be found <a href="https://github.com/vituvitaminadev/onfly-api" target="_blank">here.</a>
+The Backend part of the test can be found <a href="https://github.com/vituvitaminadev/onfly-api" target="_blank">here.</a>
