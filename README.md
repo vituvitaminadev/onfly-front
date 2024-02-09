@@ -1,41 +1,25 @@
-# Onfly Front (onfly-front)
+# UI for Onfly programming test
+Created using quasar-cli, vue composition API with script setup and typescript integration
 
-Onfly Challenge
+## Get startd
 
-## Install the dependencies
+1. Install the dependencies
 ```bash
 yarn
 # or
 npm install
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+2. Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
 quasar dev
 ```
 
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-### Format the files
-```bash
-yarn format
-# or
-npm run format
-```
-
-
-
-### Build the app for production
+3. Build the app for production
 ```bash
 quasar build
 ```
 
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+### API
+
+The API repository can be found <a href="https://github.com/vituvitaminadev/onfly-api" target="_blank">here.</a>
